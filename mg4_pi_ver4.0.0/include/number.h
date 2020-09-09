@@ -3,7 +3,7 @@
 
 #include <opencv2/opencv.hpp>
 
-#define __NUMBER_DEBUG__
+//#define __NUMBER_DEBUG__
 
 #define NUM_LEN 1 // 読み取る数字の最大個数
 

@@ -6,9 +6,9 @@
 //static const int pin_sw_f  = 25;
 //static const int pin_sw_l  = 21;
 //static const int pin_sw_r  = 27;
-static const int pin_sw_f  = 4;
-static const int pin_sw_l  = 5;
-static const int pin_sw_r  = 7;
+static const int pin_sw_f  = 18;
+static const int pin_sw_l  = 25;
+static const int pin_sw_r  = 26;
 
 int io_open(){
 	// GPIOデバイスのオープン
