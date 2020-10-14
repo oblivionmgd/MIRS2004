@@ -2,9 +2,9 @@
 #define __Itest130__
 
 typedef enum{
-	STP = 0,
-	STR,
-	ROT
+  STP = 0,
+  STR,
+  ROT
 } run_state_t;
 
 extern void request_set_runmode(run_state_t state, int speed, int dist);

@@ -9,7 +9,7 @@ PRGS :=
 PRGS += test_io test_uss test_request test_direction
 PRGS += test_capture test_number test_dir_num
 PRGS += test_server test_position
-PRGS += pilot I_test_1_30 I_test_1_60 I_test_2
+PRGS += pilot I_test_1_30 I_test_1_60 I_test_2 I_test_3
 
 # オブジェクト
 OBJS_RUN := $(addprefix $(DIR_OBJ)/, io.o uss.o arduino.o request.o direction.o)
@@ -85,4 +85,7 @@ I_test_1_60: $(OBJS_RUN) $(DIR_OBJ)/I_test_1_60.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 I_test_2: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/I_test_2.o
+	$(CC) $(LDFLAGS) $^ -o $@
+
+I_test_3: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_POS) $(OBJS_NUM) $(DIR_OBJ)/I_test_3.o
 	$(CC) $(LDFLAGS) $^ -o $@

@@ -16,7 +16,7 @@ int main(){
 		request_get_runmode(&state, &speed, &dist);
 		if( state == STP ) break;
 	}
-
+	
 	arduino_close();
 	return 0;
 }
