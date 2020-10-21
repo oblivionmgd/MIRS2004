@@ -1,7 +1,7 @@
 import tkinter as tk
 
 root = tk.Tk()
-photo = tk.PhotoImage(file="face.gif")
+photo = tk.PhotoImage(file="cat.gif")
 gif_index = 0
 
 def next_frame():
