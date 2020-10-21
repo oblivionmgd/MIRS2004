@@ -1,0 +1,126 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>   
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">   
+<title>MIRS2004-SOFT-0001 ソフトウェア基本設計書</title>
+<link rel=stylesheet href="style.css" type="text/css"> 
+<link rel="shortcut icon" href="allabout.ico">
+<script>
+setInterval("elm=document.getElementById('izutani');if(elm.style.visibility=='visible'){elm.style.visibility='hidden';}else{elm.style.visibility='visible';}",10000)
+</script>
+
+</head>
+<body bgcolor="#000000" text="#ff00ff" link="#ff0000" vlink="#ffff00" alink="#0000ff">
+
+<!--タイトルにあたる表(削除不可・適宜変更すること）-->
+<table class="table010">
+<tr>
+<th>名称</th>
+<td class="title">MIRS2004ソフトウェア基本設計書</td>
+</tr>
+<tr>
+<th>番号</th>
+<td class="title">MIRS2004-SOFT-0001</td>
+</tr>
+</table>
+<br>
+
+<!--版数・最終更新日・作成者・承認者等を記す表（削除不可・適宜変更すること）-->
+<table class="table010">
+<tr>
+<th>版数</th>
+<th>最終更新日</th>
+<th>作成</th>
+<th>承認</th>
+<th>改訂記事</th>
+</tr>
+
+<tr>
+<td>A01</td>
+<td>2020.10.15</td>
+<td>佐藤恭理</td>
+<td></td>
+<td>初版</td>
+</tr>
+</table>
+
+<h3>目次<h3>
+<a href = "#function">1.製品機能一覧</a><br>
+<a href = "#link">2.各パートへのリンク</a><br>
+
+<BR>
+<hr>
+<BR>
+
+<h2><a name = function>1．製品機能一覧</a></h2>
+実現目標となる機能を以下のtab.1に示す。
+<h3>動作概要</h3>
+<h4>環境</h4>
+<p>
+	テニスコート(学内)のハーフコートで、テニスボールを除く、ボールより大きな物体は想定していない。<br>
+	走行速度は30m/sで、所要時間は約**である。<br>
+	検出するボールはテニスボールで、大きさは約7cmを想定している。<br>
+	また、走行範囲を指定するためのカラーコーンの色彩とサイズを以下のようにする。<br>
+	<center>
+	<ul>
+		<li><font color="wheat"><b>wheat</b></font>:R:245 G:222 B:179</li>
+		<li></li>
+	<ul>
+	</center>
+</p>
+<h4>動作内容</h4>
+<ul>
+<li>1.カラーコーンの設置</li>
+<li>2.</li>
+<li></li>
+<li></li>
+<li></li>
+<li></li>
+</ul>
+
+<center>
+	Table.1 機能概要
+<table class="table010">
+	<tbody>
+		<tr>	
+			<th>機能名</th>
+			<th>機能詳細</th>
+		</tr>
+		<tr>
+			<td>走行範囲決定</td>
+			<td>カメラを用いてボール回収を指定する範囲の四隅にカラーコーンを設置してもらい、そのカラーコーンを検知してその範囲内でのみ走行を行う</td>
+		</tr>
+		<tr>
+			<td>走行</td>
+			<td>ボールを見つけるまで、その場で回転と前進を繰り返す</td>
+		</tr>
+		<tr>
+			<td>ボール検知</td>
+			<td>カメラを用いてボールを検知し、ボールに向かって直進、モータを用いてボールを回収する</td>
+		</tr>
+		<tr>
+			<td>衝突回避</td>
+			<td>超音波センサを用いて、人などの大きな物体を衝突前に検知し、停止する。</td>
+		</tr>
+	</tbody>
+</table>
+</center>
+<br>
+
+<h2><a name = link>2.会議する内容</a></h2>
+<ul>
+<li>DM(ドキュメントマネージャー)の選出 </li>
+<li>各担当の選出(メカ､エレキ､ソフト) </li>
+</ul>
+
+
+<BR>
+<hr>
+<BR>
+                                
+<address>
+<a href="http://www2.denshi.numazu-ct.ac.jp/mirsdoc2/mirs2004" target="_self">MIRS2004ドキュメント管理台帳へ</a>
+</address>
+
+</BODY></html>
+
