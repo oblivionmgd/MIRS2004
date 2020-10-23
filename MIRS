@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-23T07:08:56.500Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="LNA56zfHNlLQoy1ldPNi" version="13.8.1" type="github">
+<mxfile host="app.diagrams.net" modified="2020-10-23T07:17:38.551Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.1 Safari/605.1.15" etag="gAlPOUwKnPdUxPcNR2iX" version="13.8.1" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="740" dy="440" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="888" dy="529" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -34,14 +34,32 @@
         <mxCell id="Ypvn_fjiPh8Yk4H72kZd-13" value="ボールの探索" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="170" y="360" width="100" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ypvn_fjiPh8Yk4H72kZd-15" target="Ypvn_fjiPh8Yk4H72kZd-20">
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-25" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ypvn_fjiPh8Yk4H72kZd-15" target="Ypvn_fjiPh8Yk4H72kZd-24">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="Ypvn_fjiPh8Yk4H72kZd-15" value="ボールを発見する" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="160" y="460" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ypvn_fjiPh8Yk4H72kZd-20" target="Ypvn_fjiPh8Yk4H72kZd-22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="Ypvn_fjiPh8Yk4H72kZd-20" value="ボールを回収する" style="whiteSpace=wrap;html=1;strokeWidth=2;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="160" y="560" width="120" height="60" as="geometry" />
+          <mxGeometry x="500" y="760" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-22" value="ボールがなくなる" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.loop_limit;whiteSpace=wrap;direction=west;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="510" y="860" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-29" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="Ypvn_fjiPh8Yk4H72kZd-24" target="Ypvn_fjiPh8Yk4H72kZd-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-24" value="&lt;font style=&quot;font-size: 10px&quot;&gt;アプリからの&lt;br&gt;停止命令&lt;/font&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="560" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-28" value="&lt;font size=&quot;1&quot;&gt;障害物の検出&lt;/font&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="660" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ypvn_fjiPh8Yk4H72kZd-30" value="&lt;font size=&quot;1&quot;&gt;エリア外に出た&lt;/font&gt;" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="760" width="100" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
