@@ -2,6 +2,7 @@
 *
 !*/
 !*.*
+!MIRS
 # C included files
 *.o
 *.d
