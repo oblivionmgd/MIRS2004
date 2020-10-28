@@ -25,62 +25,7 @@ MIRSのソースコードとかそういうの
 │   ├── test.ino
 │   └── vel_ctrl.ino
 └── mg4_pi_ver4.0.0
-    ├── I_test_1_30
-    ├── I_test_1_60
-    ├── I_test_2
-    ├── I_test_3
     ├── Makefile
-    ├── Makefile.bak
-    ├── Makefile.old
-    ├── build
-    │   ├── I_test_1_30.d
-    │   ├── I_test_1_30.o
-    │   ├── I_test_1_60.d
-    │   ├── I_test_1_60.o
-    │   ├── I_test_2.d
-    │   ├── I_test_2.o
-    │   ├── I_test_3.d
-    │   ├── I_test_3.o
-    │   ├── arduino.d
-    │   ├── arduino.o
-    │   ├── direction.d
-    │   ├── direction.o
-    │   ├── get_img.d
-    │   ├── get_img.o
-    │   ├── io.d
-    │   ├── io.o
-    │   ├── number_detect.d
-    │   ├── number_detect.o
-    │   ├── number_search.d
-    │   ├── number_search.o
-    │   ├── pilot.d
-    │   ├── pilot.o
-    │   ├── position.d
-    │   ├── position.o
-    │   ├── request.d
-    │   ├── request.o
-    │   ├── server.d
-    │   ├── server.o
-    │   ├── test_capture.d
-    │   ├── test_capture.o
-    │   ├── test_dir_num.d
-    │   ├── test_dir_num.o
-    │   ├── test_direction.d
-    │   ├── test_direction.o
-    │   ├── test_io.d
-    │   ├── test_io.o
-    │   ├── test_number.d
-    │   ├── test_number.o
-    │   ├── test_position.d
-    │   ├── test_position.o
-    │   ├── test_request.d
-    │   ├── test_request.o
-    │   ├── test_server.d
-    │   ├── test_server.o
-    │   ├── test_uss.d
-    │   ├── test_uss.o
-    │   ├── uss.d
-    │   └── uss.o
     ├── include
     │   ├── I_test_1_30.h
     │   ├── I_test_1_60.h
@@ -103,7 +48,6 @@ MIRSのソースコードとかそういうの
     ├── readme.txt
     ├── src
     │   ├── I_test_1_30.c
-    │   ├── I_test_1_30.c.bak
     │   ├── I_test_1_60.c
     │   ├── I_test_2.c
     │   ├── I_test_3.c
@@ -134,17 +78,8 @@ MIRSのソースコードとかそういうの
     │   ├── test_number.c
     │   ├── test_position.c
     │   ├── test_request.c
-    │   ├── test_request.c.bak
     │   ├── test_server.c
     │   ├── test_uss.c
     │   └── uss.c
-    ├── test_capture
-    ├── test_dir_num
-    ├── test_direction
-    ├── test_io
-    ├── test_number
-    ├── test_position
-    ├── test_request
-    ├── test_server
-    └── test_uss
+    
 </pre>
