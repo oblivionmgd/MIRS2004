@@ -1,0 +1,12 @@
+# C Executables files(No filename extensions)
+*
+!*/
+!*.*
+# C included files
+.o
+.d
+# backup files
+.bak
+.old
+# DSStore
+.DS_Store
