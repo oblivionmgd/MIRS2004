@@ -3,10 +3,10 @@
 !*/
 !*.*
 # C included files
-.o
-.d
+*.o
+*.d
 # backup files
-.bak
-.old
+*.bak
+*.old
 # DSStore
 .DS_Store
