@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/oblivionmgd/MIRS2004/issues"
   },
-  "homepage": "https://github.com/oblivionmgd/MIRS2004#readme"
+  "homepage": "https://github.com/oblivionmgd/MIRS2004#readme",
+  "dependencies": {
+    "firebase": "^8.0.2"
+  }
 }
