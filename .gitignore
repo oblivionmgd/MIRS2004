@@ -11,3 +11,5 @@
 *.old
 # DSStore
 .DS_Store
+# GoogleService-info.plist
+GoogleService-Info.plist
