@@ -1,0 +1,23 @@
+{
+  "name": "mirs2004",
+  "version": "1.0.0",
+  "description": "## Description MIRSのソースコードとかそういうの",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oblivionmgd/MIRS2004.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oblivionmgd/MIRS2004/issues"
+  },
+  "homepage": "https://github.com/oblivionmgd/MIRS2004#readme",
+  "dependencies": {
+    "firebase": "^8.0.2",
+    "firebase-admin": "^9.4.1"
+  }
+}

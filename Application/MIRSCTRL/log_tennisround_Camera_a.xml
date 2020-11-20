@@ -1,0 +1,54 @@
+<batchrender>
+  <environmentinfo>
+    <machineinfo>
+      <machinename>OblivionMAC</machinename>
+      <username>oblivion</username>
+      <processortype>GenuineIntel, stepping 3, model 14, instruction family 6</processortype>
+      <processorname>Intel Core i7-6567U CPU</processorname>
+      <processornumber>4</processornumber>
+      <ostype>OS X 64 BIT</ostype>
+      <osversion>OS X: &#x30d0;&#x30fc;&#x30b8;&#x30e7;&#x30f3;10.16&#xff08;&#x30d3;&#x30eb;&#x30c9;20B5022a&#xff09;</osversion>
+      <oglvendorname>Intel</oglvendorname>
+      <oglrendername>Intel(R) Iris(TM) Graphics 550</oglrendername>
+      <oglversion>2.2</oglversion>
+    </machineinfo>
+    <c4dinfo>
+      <c4dversion>22123</c4dversion>
+      <c4dplugins>houdiniconfig addons advanced render alembic archigrass bitmapfilter bpexchange browser bugslife_client c4d_viewport_render ca ca2 cadexchange clothilde collada14 collada15 colorchoosergui compositing deployment dwg dwgobjects dynamics exchanges expressiontag fbx getloglines_R21 gltf goz gpurenderer hair i_skp io_obj metrics mkmodeler mocca model mograph motioncam motiontracker movesbymaxon nbp newman nodeeditor_material objects onlineupdater projectassetinspector python relaxuv sculpt sculptbrushes shader sketch sky sla spacemouse substance teamrender thinking particles tpoperators uvviewport volumes walkthrough xpressocore xtensions </c4dplugins>
+    </c4dinfo>
+  </environmentinfo>
+  <fileinfo>
+    <filename>tennisround.c4d</filename>
+    <filepath>/Users/oblivion/Documents/MIRS2004/Application/MIRSCTRL</filepath>
+    <renderdatainfo>
+      <rendersettings>My Render Setting</rendersettings>
+      <take>Main</take>
+      <camera>Camera</camera>
+      <width>720</width>
+      <height>720</height>
+      <filmaspect>1</filmaspect>
+      <pixelaspect>1</pixelaspect>
+      <fps>30</fps>
+      <from>75</from>
+      <to>75</to>
+      <steps>1</steps>
+      <saveinfo>
+        <imagepath>/Users/oblivion/Documents/MIRS2004/Application/MIRSCTRL</imagepath>
+        <imagedepth>8</imagedepth>
+        <imageformat>TIF</imageformat>
+      </saveinfo>
+      <videopost>
+        <effect id="1017325" name="Hair Render" />
+      </videopost>
+    </renderdatainfo>
+  </fileinfo>
+  <renderinfo>
+    <imageinfo frame="75">00:00:03 /Users/oblivion/Documents/MIRS2004/Application/MIRSCTRL/tennisround_Camera_a0075.tif</imageinfo>
+  </renderinfo>
+  <batchinfo>
+    <added>2020&#x5e74;11&#x6708;11&#x65e5; &#x6c34;&#x66dc;&#x65e5;, 15:16:53</added>
+    <started>2020&#x5e74;11&#x6708;11&#x65e5; &#x6c34;&#x66dc;&#x65e5;, 15:16:58</started>
+    <rendertime>00:00:03</rendertime>
+    <result>Finished</result>
+  </batchinfo>
+</batchrender>

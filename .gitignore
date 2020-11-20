@@ -1,0 +1,17 @@
+# C Executables files(No filename extensions)
+*
+!*/
+!*.*
+!MIRS
+# C included files
+*.o
+*.d
+# backup files
+*.bak
+*.old
+# DSStore
+.DS_Store
+# GoogleService-info.plist
+GoogleService-Info.plist
+# ServiceAccountKey.json
+serviceAccountKey.json
