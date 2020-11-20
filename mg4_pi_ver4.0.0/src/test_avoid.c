@@ -36,12 +36,12 @@ int main(){
 
 		usleep(1000*1000);
 
-		request_set_runmode(ROT, 45, 90);
+		request_set_runmode(ROT, 90, 180);
 		while(1){
 			request_get_runmode(&state, &speed, &dist);
 			if( state == STP ) break;
 		}
-    request_set_runmode(STR, 30, 100);
+    request_set_runmode(STR, 30, 60);
 		while(1){
 			request_get_runmode(&state, &speed, &dist);
 			if( state == STP ) break;
