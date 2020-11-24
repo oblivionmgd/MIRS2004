@@ -1,4 +1,5 @@
 var admin = require("firebase-admin");
+var exec = require('child_process');
 
 var serviceAccount = require("./serviceAccountKey.json");
 
@@ -7,16 +8,14 @@ admin.initializeApp({
   databaseURL: "https://mirsctrl-js.firebaseio.com"
 });
 
+var mirsRunCmd = "./Helloworld"
 var db = admin.database();
-var ref = db.ref("product/studio");
+var MIRS = db.ref("MIRS");
+var order = db.ref("MIRS/orderStatus");
+// order.set({"status":"run"});
 
-var usersRef = ref.child("sensor");
-usersRef.set({
-  "temperature":26,
-  "humid":43
-});
-
-ref.on("value",function(snapshot){
+order.on("child_changed",function(snapshot){
+  console.log(exec.execSync(mirsRunCmd).toString());
   console.log("value Changed!");
   console.log(snapshot.val());
 },
