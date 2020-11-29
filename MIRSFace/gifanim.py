@@ -20,4 +20,5 @@ label = tk.Label(root, image=photo)
 label.pack()
 
 root.after_idle(next_frame)
+root.attributes("-fullscreen", True)
 root.mainloop()
