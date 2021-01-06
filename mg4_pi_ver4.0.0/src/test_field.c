@@ -8,7 +8,7 @@
 
 int main(){
 	int speed, dist, dist_l, dist_r;
-	double d_l, d_r, x, y, dir;
+	double d_l, d_r, d_lo, d_ro, x, y, dir;
 	run_state_t state;
 
   if(arduino_open() != 0) return -1;
@@ -32,9 +32,9 @@ int main(){
   usleep(1000*1000);
 
 	request_get_dist(&dist_l, &dist_r);
-	d_l -= dist_l;
-	d_r -= dist_r;
-	position_set_coord(d_l, d_r);
+	d_lo = dist_l - d_l;
+	d_ro = dist_r - d_r;
+	position_set_coord(d_lo, d_ro);
 
   speed = 30;
 	dist = 400;
@@ -56,9 +56,9 @@ int main(){
 	usleep(1000*1000);
 
 	request_get_dist(&dist_l, &dist_r);
-	d_l -= dist_l;
-	d_r -= dist_r;
-	position_set_coord(d_l, d_r);
+	d_lo = dist_l - d_l;
+	d_ro = dist_r - d_r;
+	position_set_coord(d_lo, d_ro);
 
 	position_get_coord(&x, &y, &dir);
 	position_set_field(x, y);
@@ -76,9 +76,9 @@ int main(){
 	usleep(1000*1000);
 
 	request_get_dist(&dist_l, &dist_r);
-	d_l -= dist_l;
-	d_r -= dist_r;
-	position_set_coord(d_l, d_r);
+	d_lo = dist_l - d_l;
+	d_ro = dist_r - d_r;
+	position_set_coord(d_lo, d_ro);
 
 	dist = x / sin(dir / 360);
 
@@ -114,9 +114,9 @@ int main(){
 	usleep(1000*1000);
 
 	request_get_dist(&dist_l, &dist_r);
-	d_l -= dist_l;
-	d_r -= dist_r;
-	position_set_coord(d_l, d_r);
+	d_lo = dist_l - d_l;
+	d_ro = dist_r - d_r;
+	position_set_coord(d_lo, d_ro);
 
 
 	arduino_close();

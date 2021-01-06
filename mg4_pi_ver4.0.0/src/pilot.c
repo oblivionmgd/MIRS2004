@@ -1,27 +1,17 @@
 #include <stdio.h>
 #include <unistd.h>
-#include "arduino.h"
-#include "io.h"
-#include "request.h"
-#include "uss.h"
+#include <pthread.h>
 
-int main(){
-  //double volt;
+extern void emer_thread();
+extern void func_thread();
 
-  if(io_open() != 0) return -1;
-  if(arduino_open() != 0) return -1;
-  if(uss_open_l() != 0) return -1;
-  if(uss_open_r() != 0) return -1;
+int main(void){
+  pthread_t tid_A, tid_B;
+  pthread_create( &tid_A, NULL, &emergency_thread, NULL );
+  pthread_create( &tid_B, NULL, &func_thread, NULL );
 
-  printf("press enter to start\n");
-  getchar();
+  pthread_join(tid_A);
+  pthread_join(tid_B);
 
-  while(1){
-    // 処理を記述
-    request_set_runmode(STR, 25, 100);
-    break;
-  }
-
-  arduino_close();
   return 0;
 }
