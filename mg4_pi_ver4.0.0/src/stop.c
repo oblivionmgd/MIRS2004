@@ -3,8 +3,8 @@
 #include "request.h"
 #include "stop.h"
 
-int stop_open(){
-	request_get_batt(volt);
+void stop_open(){
+	request_get_batt(double &volt);
 		if( volt < 1 ){
 			request_set_runmode(STP, 0, 0);
 			_exit(0);

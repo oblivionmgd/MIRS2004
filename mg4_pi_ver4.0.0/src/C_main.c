@@ -5,7 +5,7 @@
 #include "request.h"
 
 
-void emergency_thread(){
+void emer_thread(){
   double volt;
   run_state_t state;
 

@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <pthread.h>
 
-extern void emergency_thread();
+extern void emer_thread();
 extern void func_thread();
 
 int main(void){
