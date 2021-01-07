@@ -64,7 +64,7 @@ int main(){
 		while(1){
 			//request_get_runmode(&state, &speed, &dist);
 			request_get_convmode(&conv_state);
-			if( state == STOP ){
+			if( conv_state == STOP ){
 				//request_set_runmode(STP);
 				request_set_convmode(STOP);
 				break;
