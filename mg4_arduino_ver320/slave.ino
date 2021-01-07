@@ -2,7 +2,8 @@ void slave() {
   double speed, dist, dist_l, dist_r;
   run_state_t state,state_conv;
   command_data_t command_data;
-
+  motor_conveyor_opne();
+  
   while (1) {
     if (raspi_receive(&command_data) == 0) {
       switch (command_data.val[0]) {
