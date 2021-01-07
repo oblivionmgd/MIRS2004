@@ -59,7 +59,7 @@ int main(){
 		default:
 			break;
 		case 6:
-		request_set_runmode(STR, 30, 100);
+		//request_set_runmode(STR, 30, 100);
 		request_set_convmode(ROTE);
 		while(1){
 			//request_get_runmode(&state, &speed, &dist);
