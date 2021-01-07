@@ -15,13 +15,13 @@ int main(){
 		dist = 300;
 
 		request_set_runmode(STR, speed, dist);
-    request_set_convmode(ROT);
+    //request_set_convmode(ROT);
 		while(1){
 			request_get_runmode(&state, &speed, &dist);
-      request_get_convmode(&state_conv);
+      //request_get_convmode(&state_conv);
 			if( state == STP ){
         request_set_convmode(STP);
-        request_get_convmode(&state_conv);
+        //request_get_convmode(&state_conv);
         break;
       }
 			usleep(10*1000);
