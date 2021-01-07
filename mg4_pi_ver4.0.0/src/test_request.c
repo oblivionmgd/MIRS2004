@@ -57,7 +57,6 @@ int main(){
 			return 0;
 		default:
 			break;
-		}
 		case 6:
 		request_set_runmode(STR, 30, 100);
 		request_set_convmode(ROT);
@@ -71,7 +70,7 @@ int main(){
 			}
 		}
 	}
-
+}
 	arduino_close();
 	return 0;
 }
