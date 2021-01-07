@@ -1,8 +1,7 @@
 #include <stdio.h>
 #include <unistd.h>
-//#include "arduino.h"
+#include "arduino.h"
 #include "request.h"
-#include "test_motor.h"
 
 int main(){
 	int speed, dist;
