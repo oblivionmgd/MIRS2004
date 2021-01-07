@@ -9,7 +9,7 @@ PRGS :=
 PRGS += test_io test_uss test_request test_direction
 PRGS += test_capture test_number test_dir_num
 PRGS += test_server
-PRGS += pilot I_test_1_30 I_test_1_60 I_test_2 I_test_3
+PRGS += I_test_1_30 I_test_1_60 I_test_2 I_test_3
 PRGS += test_motor
 
 # オブジェクト
@@ -49,9 +49,6 @@ $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp
 -include $(DIR_OBJ)/*.d
 
 # プログラム毎に生成ルールを記述
-pilot: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(OBJS_CIR) $(OBJS_SVR) $(OBJS_POS) $(DIR_OBJ)/pilot.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
 test_io: $(OBJS_RUN) $(DIR_OBJ)/test_io.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
