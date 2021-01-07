@@ -8,7 +8,7 @@ DIR_IMG  := ./img
 PRGS :=
 PRGS += test_io test_uss test_request test_direction
 PRGS += test_capture test_number test_dir_num
-PRGS += test_server test_position
+PRGS += test_server
 PRGS += pilot I_test_1_30 I_test_1_60 I_test_2 I_test_3
 PRGS += test_motor
 
@@ -74,9 +74,6 @@ test_dir_num: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/test_dir_num.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 test_server: $(OBJS_SVR) $(DIR_OBJ)/test_server.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_position: $(OBJS_POS) $(DIR_OBJ)/test_position.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 I_test_1_30: $(OBJS_RUN) $(DIR_OBJ)/I_test_1_30.o
