@@ -5,8 +5,8 @@
 // マップ右下を原点とするして、上にx軸、左にy軸をとる
 
 // フィールドの大きさ[pixel]
-static  int xl = 400;
-static  int yl = 400;
+static  double xl = 400;
+static  double yl = 400;
 
 // 座標データ[cm]と角度データ[deg]
 static double x   = 0.0;
