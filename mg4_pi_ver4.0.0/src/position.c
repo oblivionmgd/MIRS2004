@@ -5,8 +5,8 @@
 // マップ右下を原点とするして、上にx軸、左にy軸をとる
 
 // フィールドの大きさ[pixel]
-static  double xl = 400;
-static  double yl = 400;
+static double xl = 0.0;
+static double yl = 0.0;
 
 // 座標データ[cm]と角度データ[deg]
 static double x   = 0.0;
@@ -90,10 +90,10 @@ void position_set_field(double x, double y){
 	yl = y;
 }
 
-void position_get_field(double *xl, double *yl){
+/*void position_get_field(double *xl, double *yl){
 	*xl = xl;
 	*yl = yl;
-}
+}*/
 
 
 char position_get_area(){
