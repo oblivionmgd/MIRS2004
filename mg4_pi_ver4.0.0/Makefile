@@ -85,5 +85,5 @@ I_test_2: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/I_test_2.o
 I_test_3: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_POS) $(OBJS_NUM) $(DIR_OBJ)/I_test_3.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
-test_motor: $(OBJS_RUN)/test_motor.o
+test_motor: $(OBJS_RUN) $(DIR_OBJ)/test_motor.o
 	$(CC) $(LDFLAGS) $^ -o $@
