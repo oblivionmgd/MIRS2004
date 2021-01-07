@@ -29,6 +29,8 @@ typedef struct {
 #define PIN_SW      10
 #define PIN_LED     13
 #define PIN_BATT    19
+#define PIN_CON_PWM 5
+#define PIN_CON_DIR 6
 
 /* パラメータ */
 // 動作周期 [ms]

@@ -1,6 +1,6 @@
 void slave() {
   double speed, dist, dist_l, dist_r;
-  run_state_t state;
+  run_state_t state,state_conv;
   command_data_t command_data;
 
   while (1) {
@@ -14,6 +14,16 @@ void slave() {
           break;
         case 3:
           run_ctrl_set(ROT, command_data.val[1], command_data.val[2]);
+          break;
+        case 4:
+          conv_ctrl_set(STP);
+          break;
+        case 5:
+          conv_ctrl_set(ROT);
+        case 6:
+          conv_ctrl_get(&state_conv);
+          command_data.val[0] = ((state == ROT) ? 5 : 4);
+          raspi_send(command_data);
           break;
         case 10:
           run_ctrl_get(&state, &speed, &dist);
@@ -38,7 +48,7 @@ void slave() {
     }
     run_ctrl_execute();
     vel_ctrl_execute();
+    conv_ctrl_execute();
     delay(T_CTRL);
   }
 }
-
