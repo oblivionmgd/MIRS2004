@@ -21,7 +21,7 @@ int main(){
 			request_get_runmode(&state, &speed, &dist);
       request_get_convmode(&conv_state);
 			if( state == STP ){
-        request_set_runmode(STP);
+        request_set_runmode(STP, 0, 0);
         request_set_convmode(STOP);
         break;
       }
