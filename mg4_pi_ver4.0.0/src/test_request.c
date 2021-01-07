@@ -6,7 +6,7 @@ int main(){
 	int mode, speed, dist;
 	double volt;
 	//char buf[256];
-	run_state_t state;
+	run_state_t state,state_conv;
 
 	if(arduino_open() != 0) return -1;
 
