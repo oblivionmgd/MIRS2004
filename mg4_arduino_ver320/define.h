@@ -5,6 +5,11 @@ typedef enum {
   ROT
 } run_state_t;
 
+typedef enum {
+  STOP = 0,
+  ROTE
+} conv_state_t;
+
 typedef struct {
   unsigned char val[7];
 } serial_data_t;

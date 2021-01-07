@@ -1,4 +1,4 @@
-static run_state_t conv_ctrl_state = STP;
+static conv_state_t conv_ctrl_state = STOP;
 
 
 void motor_conveyor_opne(){
@@ -9,22 +9,22 @@ void motor_conveyor_opne(){
 
 void conv_ctrl_execute(){
   switch (conv_ctrl_state) {
-    case STP:
+    case STOP:
       digitalWrite(PIN_CON_DIR, LOW);
       analogWrite(PIN_CON_PWM, 0);
       break;
-    case ROT:
+    case ROTE:
       digitalWrite(PIN_CON_DIR, HIGH);
       analogWrite(PIN_CON_PWM, 10);
       break;
   }
 }
 
-void conv_ctrl_set(run_state_t conv_state) {
+void conv_ctrl_set(conv_state_t conv_state) {
   conv_ctrl_state = conv_state;
 }
 
-void conv_ctrl_get(run_state_t *conv_state) {
+void conv_ctrl_get(conv_state_t *conv_state) {
   *conv_state = conv_ctrl_state;
 }
 

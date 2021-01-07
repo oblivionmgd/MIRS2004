@@ -6,7 +6,8 @@ int main(){
 	int mode, speed, dist;
 	double volt;
 	//char buf[256];
-	run_state_t state,state_conv;
+	run_state_t state;
+	conv_state_t conv_state;
 
 	if(arduino_open() != 0) return -1;
 
@@ -59,13 +60,13 @@ int main(){
 			break;
 		case 6:
 		request_set_runmode(STR, 30, 100);
-		request_set_convmode(ROT);
+		request_set_convmode(ROTE);
 		while(1){
 			//request_get_runmode(&state, &speed, &dist);
-			request_get_convmode(&state_conv);
-			if( state == STP ){
-				//request_set_convmode(STP);
-				request_set_convmode(STP);
+			request_get_convmode(&conv_state);
+			if( state == STOP ){
+				//request_set_runmode(STP);
+				request_set_convmode(STOP);
 				break;
 			}
 		}

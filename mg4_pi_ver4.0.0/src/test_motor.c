@@ -5,7 +5,8 @@
 
 int main(){
 	int speed, dist;
-	run_state_t state,state_conv;
+	run_state_t state;
+	conv_state_t conv_state;
 
   if(arduino_open() != 0) return -1;
 
@@ -15,13 +16,13 @@ int main(){
 		dist = 300;
 
 		request_set_runmode(STR, 30, 100);
-    //request_set_convmode(ROT);
+    //request_set_convmode(ROTE);
 		while(1){
 			request_get_runmode(&state, &speed, &dist);
-      //request_get_convmode(&state_conv);
+      //request_get_convmode(&conv_state);
 			if( state == STP ){
         request_set_convmode(STP);
-        //request_set_convmode(STP);
+        //request_set_convmode(STOP);
         break;
       }
 			usleep(10*1000);

@@ -7,11 +7,16 @@ typedef enum{
 	ROT
 } run_state_t;
 
+typedef enum{
+	STOP = 0,
+	ROTE
+} conv_state_t;
+
 extern void request_set_runmode(run_state_t state, int speed, int dist);
 extern int  request_get_runmode(run_state_t *state, int *speed, int *dist);
 extern int  request_get_dist(int *dist_l, int *dist_r);
 extern int  request_get_batt(double *volt);
-extern void request_set_convmode(run_state_t state_conv);
-extern int request_get_convmode(run_state_t *state_conv);
+extern void request_set_convmode(conv_state_t conv_state);
+extern int request_get_convmode(conv_state_t *conv_state);
 
 #endif

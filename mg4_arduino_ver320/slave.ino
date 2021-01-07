@@ -1,6 +1,7 @@
 void slave() {
   double speed, dist, dist_l, dist_r;
-  run_state_t state,state_conv;
+  run_state_t state;
+  conv_state_t conv_state;
   command_data_t command_data;
   motor_conveyor_opne();
   
@@ -17,13 +18,13 @@ void slave() {
           run_ctrl_set(ROT, command_data.val[1], command_data.val[2]);
           break;
         case 4:
-          conv_ctrl_set(STP);
+          conv_ctrl_set(STOP);
           break;
         case 5:
-          conv_ctrl_set(ROT);
+          conv_ctrl_set(ROTE);
         case 6:
-          conv_ctrl_get(&state_conv);
-          command_data.val[0] = ((state == ROT) ? 5 : 4);
+          conv_ctrl_get(&conv_state);
+          command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
           raspi_send(command_data);
           break;
         case 10:
