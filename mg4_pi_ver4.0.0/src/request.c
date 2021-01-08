@@ -85,7 +85,7 @@ void request_set_convmode(conv_state_t conv_state){
 int request_get_convmode(conv_state_t *conv_state){
   command_data_t command_data;
 
-  command_data.val[0] = 6;
+	command_data.val[0] = 13;
 
   arduino_clear();
   arduino_send(command_data);

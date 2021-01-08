@@ -1,16 +1,14 @@
 static conv_state_t conv_ctrl_state = STOP;
 
 
-void motor_conveyor_opne(){
+void motor_conveyor_open(){
   pinMode(PIN_CON_DIR, OUTPUT);
   pinMode(PIN_CON_PWM, OUTPUT);
   analogWrite(PIN_CON_PWM, 0);
   }
 
 void conv_ctrl_execute(){
-  digitalWrite(PIN_CON_DIR, HIGH);
-  analogWrite(PIN_CON_PWM, 100);
-  /*switch (conv_ctrl_state) {
+  switch (conv_ctrl_state) {
     case STOP:
       digitalWrite(PIN_CON_DIR, LOW);
       analogWrite(PIN_CON_PWM, 0);
@@ -19,7 +17,8 @@ void conv_ctrl_execute(){
       digitalWrite(PIN_CON_DIR, HIGH);
       analogWrite(PIN_CON_PWM, 100);
       break;
-  }*/
+  }
+  
 }
 
 void conv_ctrl_set(conv_state_t conv_state) {
