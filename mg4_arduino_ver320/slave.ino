@@ -3,7 +3,6 @@ void slave() {
   run_state_t state;
   conv_state_t conv_state;
   command_data_t command_data;
-  motor_conveyor_opne();
   
   while (1) {
     if (raspi_receive(&command_data) == 0) {
