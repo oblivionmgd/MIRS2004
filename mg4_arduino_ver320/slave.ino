@@ -23,9 +23,7 @@ void slave() {
           conv_ctrl_set(ROTE);
           break;
         case 6:
-          digitalWrite(PIN_CON_DIR, HIGH);
-          analogWrite(PIN_CON_PWM, 100);
-          //conv_ctrl_get(&conv_state);
+          conv_ctrl_get(&conv_state);
           command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
           raspi_send(command_data);
           break;
