@@ -22,11 +22,6 @@ void slave() {
         case 5:
           conv_ctrl_set(ROTE);
           break;
-        case 6:
-          conv_ctrl_get(&conv_state);
-          command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
-          raspi_send(command_data);
-          break;
         case 10:
           run_ctrl_get(&state, &speed, &dist);
           command_data.val[0] = ((state == STR) ? 2 : (state == ROT) ? 3 : 1);
@@ -42,6 +37,11 @@ void slave() {
           break;
         case 12:
           command_data.val[0] = (short)(io_get_batt() * 100.0);
+          raspi_send(command_data);
+          break;
+        case 13:
+          conv_ctrl_get(&conv_state);
+          command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
           raspi_send(command_data);
           break;
         default:
