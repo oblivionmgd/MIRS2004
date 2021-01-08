@@ -21,6 +21,7 @@ void slave() {
           break;
         case 5:
           conv_ctrl_set(ROTE);
+          break;
         case 6:
           conv_ctrl_get(&conv_state);
           command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
