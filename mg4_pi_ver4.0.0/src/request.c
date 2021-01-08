@@ -77,7 +77,7 @@ int request_get_batt(double *volt){
 void request_set_convmode(conv_state_t conv_state){
 	command_data_t command_data;
 
-	command_data.val[0] = ((conv_state == ROTE) ? 5 : 4);
+	command_data.val[0] = ((conv_state == RT) ? 5 : 4);
 
 	arduino_send(command_data);
 }
@@ -92,7 +92,7 @@ int request_get_convmode(conv_state_t *conv_state){
 	usleep(50 * 1000);
 
 	if(arduino_receive(&command_data) == 0){
-		*conv_state = ((command_data.val[0] == 5) ? ROTE :  STOP);
+		*conv_state = ((command_data.val[0] == 5) ? RT :  ST);
 		return 0;
 	}else{
 		return -1;

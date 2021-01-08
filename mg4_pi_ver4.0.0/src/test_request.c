@@ -62,15 +62,15 @@ int main(){
 		printf("mode\n");
 		scanf("%d",&motor_mode);
 		//request_set_runmode(STR, 30, 100);
-		request_set_convmode(ROTE);
+		request_set_convmode(RT);
 		printf("set\n");
 		while(1){
 			//request_get_runmode(&state, &speed, &dist);
 			request_get_convmode(&conv_state);
 			printf("get\n");
-			if( conv_state == STOP ){
+			if( conv_state == ST ){
 				//request_set_runmode(STP, 0, 0);
-				request_set_convmode(STOP);
+				request_set_convmode(ST);
 				printf("stop\n");
 				break;
 			}

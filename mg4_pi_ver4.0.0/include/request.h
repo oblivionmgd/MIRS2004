@@ -8,8 +8,8 @@ typedef enum{
 } run_state_t;
 
 typedef enum{
-	STOP = 0,
-	ROTE
+	ST = 0,
+	RT
 } conv_state_t;
 
 extern void request_set_runmode(run_state_t state, int speed, int dist);
