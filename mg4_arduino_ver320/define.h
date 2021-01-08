@@ -6,8 +6,8 @@ typedef enum {
 } run_state_t;
 
 typedef enum {
-  STOP = 0,
-  ROTE
+  ST = 0,
+  RT
 } conv_state_t;
 
 typedef struct {

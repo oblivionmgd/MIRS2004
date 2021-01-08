@@ -3,13 +3,13 @@
 #include "request.h"
 
 int main(){
-  int mode, speed, dist;
+    int mode, speed, dist, motor_mode;
   double volt;
   //char buf[256];
   run_state_t state;
   conv_state_t conv_state;
 
-  if(arduino_open() != 0) return -1;
+    if(arduino_open() != 0) return -1;
 
 
   while(1){
@@ -59,19 +59,22 @@ int main(){
       default:
         break;
       case 6:
+        printf("mode\n");
+        scanf("%d",&motor_mode);
         //request_set_runmode(STR, 30, 100);
-        request_set_convmode(ROTE);
+        request_set_convmode(RT);
         printf("set\n");
         while(1){
           //request_get_runmode(&state, &speed, &dist);
           request_get_convmode(&conv_state);
           printf("get\n");
-          if( conv_state == STOP ){
+          if( conv_state == ST ){
             //request_set_runmode(STP, 0, 0);
-            request_set_convmode(STOP);
+            request_set_convmode(ST);
             printf("stop\n");
             break;
           }
+          break;
         }
     }
   }
