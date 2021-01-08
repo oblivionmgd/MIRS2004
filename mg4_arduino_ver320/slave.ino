@@ -5,6 +5,8 @@ void slave() {
   command_data_t command_data;
   
   while (1) {
+    digitalWrite(PIN_CON_DIR, HIGH);
+    analogWrite(PIN_CON_PWM, 100);
     if (raspi_receive(&command_data) == 0) {
       switch (command_data.val[0]) {
         case 1:
