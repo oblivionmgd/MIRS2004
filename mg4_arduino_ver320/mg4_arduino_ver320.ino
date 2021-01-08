@@ -10,7 +10,7 @@ void setup() {
   encoder_open();
   motor_open();
   raspi_open();
-  motor_conveyor_opne();
+  motor_conveyor_open();
 }
 
 void loop() {
