@@ -3,7 +3,7 @@
 #include "request.h"
 
 int main(){
-	int mode, speed, dist;
+	int mode, speed, dist, motor_mode;
 	double volt;
 	//char buf[256];
 	run_state_t state;
@@ -59,6 +59,8 @@ int main(){
 		default:
 			break;
 		case 6:
+		printf("mode\n");
+		scanf("%d",&motor_mode);
 		//request_set_runmode(STR, 30, 100);
 		request_set_convmode(ROTE);
 		printf("set\n");
