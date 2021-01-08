@@ -61,12 +61,15 @@ int main(){
 		case 6:
 		//request_set_runmode(STR, 30, 100);
 		request_set_convmode(ROTE);
+		printf("set\n");
 		while(1){
 			//request_get_runmode(&state, &speed, &dist);
 			request_get_convmode(&conv_state);
+			printf("get\n");
 			if( conv_state == STOP ){
 				//request_set_runmode(STP, 0, 0);
 				request_set_convmode(STOP);
+				printf("stop\n");
 				break;
 			}
 		}
