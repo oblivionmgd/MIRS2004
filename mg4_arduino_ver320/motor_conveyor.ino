@@ -16,7 +16,6 @@ void conv_ctrl_execute(){
     case ROTE:
       digitalWrite(PIN_CON_DIR, HIGH);
       analogWrite(PIN_CON_PWM, 100);
-      delay(1000);
       break;
   }
   
