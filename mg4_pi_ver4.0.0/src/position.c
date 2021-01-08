@@ -5,15 +5,15 @@
 // マップ右下を原点とするして、上にx軸、左にy軸をとる
 
 // フィールドの大きさ[pixel]
-static const int xl = 400;
-static const int yl = 400;
+static double xl = 0.0;
+static double yl = 0.0;
 
 // 座標データ[cm]と角度データ[deg]
 static double x   = 0.0;
 static double y   = 0.0;
 static double dir = 0.0;
 
-double d_angle, angle, d_average;
+double d_angle, angle, d_average, body;
 
 void position_set_first(double x_s, double y_s, double dir_s){
 	x = x_s;
@@ -69,7 +69,9 @@ void position_get_coord(double *x_g, double *y_g, double *dir_g){
 void position_set_coord(double d_l, double d_r){
 		d_angle = (d_r - d_l)/2;
 		//逆回転でも値が+されるならｰを+に、変更されないならd_rのみ
-		angle = (d_angle % (32.1 * M_PI))/(32.1 * M_PI) * 360;
+		body = (32.1 * M_PI);
+		fmod(d_angle, body);
+		angle = (d_angle / body) * 360;
 
 		dir += angle;
 
@@ -88,10 +90,10 @@ void position_set_field(double x, double y){
 	yl = y;
 }
 
-void position_get_field(double *xl, double *yl){
+/*void position_get_field(double *xl, double *yl){
 	*xl = xl;
 	*yl = yl;
-}
+}*/
 
 
 char position_get_area(){

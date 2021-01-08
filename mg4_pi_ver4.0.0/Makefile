@@ -8,8 +8,9 @@ DIR_IMG  := ./img
 PRGS :=
 PRGS += test_io test_uss test_request test_direction
 PRGS += test_capture test_number test_dir_num
-PRGS += test_server test_position
-PRGS += pilot I_test_1_30 I_test_1_60 I_test_2 I_test_3
+PRGS += test_server
+PRGS += I_test_1_30 I_test_1_60 I_test_2 I_test_3
+PRGS += test_motor
 
 # オブジェクト
 OBJS_RUN := $(addprefix $(DIR_OBJ)/, io.o uss.o arduino.o request.o direction.o)
@@ -48,9 +49,6 @@ $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp
 -include $(DIR_OBJ)/*.d
 
 # プログラム毎に生成ルールを記述
-pilot: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(OBJS_CIR) $(OBJS_SVR) $(OBJS_POS) $(DIR_OBJ)/pilot.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
 test_io: $(OBJS_RUN) $(DIR_OBJ)/test_io.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
@@ -75,9 +73,6 @@ test_dir_num: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/test_dir_num.o
 test_server: $(OBJS_SVR) $(DIR_OBJ)/test_server.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
-test_position: $(OBJS_POS) $(DIR_OBJ)/test_position.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
 I_test_1_30: $(OBJS_RUN) $(DIR_OBJ)/I_test_1_30.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
@@ -88,4 +83,7 @@ I_test_2: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/I_test_2.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 I_test_3: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_POS) $(OBJS_NUM) $(DIR_OBJ)/I_test_3.o
+	$(CC) $(LDFLAGS) $^ -o $@
+
+test_motor: $(OBJS_RUN) $(DIR_OBJ)/test_motor.o
 	$(CC) $(LDFLAGS) $^ -o $@

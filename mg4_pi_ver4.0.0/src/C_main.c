@@ -22,9 +22,9 @@ void emer_thread(){
 
 void func_thread(){
   int i;
-  field();
   for(i = 1, i > 10; i++){
-    search();
+    collect();
+
   }
   request_set_runmode(STP, 0, 0);
   _exit(0);
