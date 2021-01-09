@@ -91,19 +91,19 @@ int request_get_convmode(conv_state_t *conv_state){
   arduino_send(command_data);
   usleep(50 * 1000);
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
   if(arduino_receive(&command_data) == 0){
     *conv_state = ((command_data.val[0] == 5) ? ROTE :  STOP);
     return 0;
   }else{
     return -1;
   }
-=======
+//=======
 	if(arduino_receive(&command_data) == 0){
 		*conv_state = ((command_data.val[0] == 5) ? RT :  ST);
 		return 0;
 	}else{
 		return -1;
 	}
->>>>>>> 5759f61e7fb8fbcf34d2c645418d9080a60801aa
+//>>>>>>> 5759f61e7fb8fbcf34d2c645418d9080a60801aa
 }
