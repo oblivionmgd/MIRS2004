@@ -92,12 +92,12 @@ int request_get_convmode(conv_state_t *conv_state){
   usleep(50 * 1000);
 
 //<<<<<<< HEAD
-  if(arduino_receive(&command_data) == 0){
+  /*if(arduino_receive(&command_data) == 0){
     *conv_state = ((command_data.val[0] == 5) ? ROTE :  STOP);
     return 0;
   }else{
     return -1;
-  }
+  }*/
 //=======
 	if(arduino_receive(&command_data) == 0){
 		*conv_state = ((command_data.val[0] == 5) ? RT :  ST);
