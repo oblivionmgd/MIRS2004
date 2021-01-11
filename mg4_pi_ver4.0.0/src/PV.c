@@ -15,7 +15,7 @@ int main(){
   scanf("%d",&mode);
   switch(mode){
     case 1:
-      request_set_runmode(ROT, 45, 90);
+      request_set_runmode(ROT, 45, 80);
       request_set_convmode(ST);
       while(1){
         request_get_runmode(&state, &speed, &dist);
