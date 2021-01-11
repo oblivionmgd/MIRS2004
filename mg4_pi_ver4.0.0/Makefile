@@ -6,10 +6,7 @@ DIR_IMG  := ./img
 
 # 生成するプログラム
 PRGS :=
-PRGS += test_io test_uss test_request test_direction
-PRGS += test_capture test_number test_dir_num
-PRGS += test_server
-PRGS += I_test_1_30 I_test_1_60 I_test_2 I_test_3
+PRGS += test_request
 PRGS += PV
 
 # オブジェクト
@@ -49,40 +46,8 @@ $(DIR_OBJ)/%.o: $(DIR_SRC)/%.cpp
 -include $(DIR_OBJ)/*.d
 
 # プログラム毎に生成ルールを記述
-test_io: $(OBJS_RUN) $(DIR_OBJ)/test_io.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_uss: $(OBJS_RUN) $(DIR_OBJ)/test_uss.o
-	$(CC) $(LDFLAGS) $^ -o $@
 
 test_request: $(OBJS_RUN) $(DIR_OBJ)/test_request.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_direction: $(OBJS_RUN) $(DIR_OBJ)/test_direction.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_capture: $(OBJS_CAP) $(DIR_OBJ)/test_capture.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_number: $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/test_number.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_dir_num: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/test_dir_num.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-test_server: $(OBJS_SVR) $(DIR_OBJ)/test_server.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-I_test_1_30: $(OBJS_RUN) $(DIR_OBJ)/I_test_1_30.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-I_test_1_60: $(OBJS_RUN) $(DIR_OBJ)/I_test_1_60.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-I_test_2: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/I_test_2.o
-	$(CC) $(LDFLAGS) $^ -o $@
-
-I_test_3: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_POS) $(OBJS_NUM) $(DIR_OBJ)/I_test_3.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
 PV: $(OBJS_RUN) $(DIR_OBJ)/PV
