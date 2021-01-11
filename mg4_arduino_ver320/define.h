@@ -5,6 +5,11 @@ typedef enum {
   ROT
 } run_state_t;
 
+typedef enum {
+  ST = 0,
+  RT
+} conv_state_t;
+
 typedef struct {
   unsigned char val[7];
 } serial_data_t;
@@ -29,6 +34,8 @@ typedef struct {
 #define PIN_SW      10
 #define PIN_LED     13
 #define PIN_BATT    19
+#define PIN_CON_PWM 5
+#define PIN_CON_DIR 6
 
 /* パラメータ */
 // 動作周期 [ms]
