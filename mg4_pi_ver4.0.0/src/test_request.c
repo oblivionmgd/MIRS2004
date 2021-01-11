@@ -75,8 +75,8 @@ int main(){
             printf("stop\n");
             break;
           }
-          break;
         }
+				break;
 			case 7:
 				//printf("mode\n");
 				//scanf("%d",&motor_mode);
