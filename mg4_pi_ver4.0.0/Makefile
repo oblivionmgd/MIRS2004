@@ -85,5 +85,5 @@ I_test_2: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_NUM) $(DIR_OBJ)/I_test_2.o
 I_test_3: $(OBJS_RUN) $(OBJS_CAP) $(OBJS_POS) $(OBJS_NUM) $(DIR_OBJ)/I_test_3.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
-PV: $(OBJS_RUN) $(DIR_OBJ)/PV
+PV: $(OBJS_RUN) $(DIR_OBJ)/PV.o
 	$(CC) $(LDFLAGS) $^ -o $@

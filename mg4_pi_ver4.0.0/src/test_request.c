@@ -121,6 +121,41 @@ int main(){
 					usleep(10*1000);
 				}
 				break;
+      case 8:
+        printf("1irete\n");
+        scanf("%d",&motor_mode);
+        request_set_runmode(ROT, 45, 90);
+        request_set_convmode(ST);
+        printf("set\n");
+        while(1){
+          request_get_runmode(&state, &speed, &dist);
+          request_get_convmode(&conv_state);
+          printf("get\n");
+          if( state == STP ){
+            request_set_runmode(STP, 0, 0);
+            printf("stop\n");
+            break;
+          }
+					usleep(10*1000);
+        }
+        usleep(1000*1000);
+        
+        request_set_runmode(STR, 30, 50);
+        request_set_convmode(RT);
+        printf("set\n");
+        while(1){
+          request_get_runmode(&state, &speed, &dist);
+          request_get_convmode(&conv_state);
+          printf("get\n");
+          if( state == STP ){
+            request_set_runmode(STP, 0, 0);
+            printf("stop\n");
+            break;
+          }
+					usleep(10*1000);
+        }
+        usleep(1000*1000);
+				break;
     }
   }
   arduino_close();
