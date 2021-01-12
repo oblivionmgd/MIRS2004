@@ -5,6 +5,7 @@
 
 
 int main(){
+  char passbuf[] = "python3 /home/pi/MIRS2004/MIRSFace/face.py &";
   int mode, speed, dist;
   //double volt;
   //char buf[256];
@@ -15,6 +16,7 @@ int main(){
   scanf("%d",&mode);
   switch(mode){
     case 1:
+      system(passbuf);
       //一個目
       request_set_runmode(ROT, 45, 90);
       request_set_convmode(ST);
