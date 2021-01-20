@@ -4,12 +4,12 @@ from PIL import Image, ImageTk
 
 root = tk.Tk()
 
-img = ImageTk.PhotoImage(Image.open('smile.png'))
+img = ImageTk.PhotoImage(Image.open('/home/pi/MIRS2004/MIRSFace/smile.png'))
 panel = tk.Label(root, image=img)
 panel.pack(side="bottom", fill="both", expand="yes")
 
 def callback(e):
-    img2 = ImageTk.PhotoImage(Image.open('warning.png'))
+    img2 = ImageTk.PhotoImage(Image.open('/home/pi/MIRS2004/MIRSFace/warning.png'))
     panel.configure(image=img2)
     panel.image = img2
 

@@ -14,8 +14,8 @@ void conv_ctrl_execute(){
       analogWrite(PIN_CON_PWM, 0);
       break;
     case RT:
-      digitalWrite(PIN_CON_DIR, HIGH);
-      analogWrite(PIN_CON_PWM, 100);
+      digitalWrite(PIN_CON_DIR, LOW);
+      analogWrite(PIN_CON_PWM, 40);
       break;
   }
 }

@@ -6,14 +6,14 @@
 #include "deg.h"
 
 int main(){
-    int mode, speed, dist, motor_mode, dg;
+    int mode, speed, dist, motor_mode;
     //char passbuf[] = "python3 /home/pi/MIRS2004/MIRSFace/face.py &";
   double volt;
   //char buf[256];
   run_state_t state;
   conv_state_t conv_state;
 
-  if(arduino_open() != 0) return -1;
+    if(arduino_open() != 0) return -1;
 
 
   while(1){
@@ -25,7 +25,6 @@ int main(){
         request_set_runmode(STP, 0, 0);
         request_set_convmode(ST);
         break;
-
       case 1:
         printf("speed? [cm/s]\n");
         scanf("%d",&speed);
@@ -37,8 +36,8 @@ int main(){
           request_get_runmode(&state, &speed, &dist);
           if( state == STP ) break;
         }
-        break;
 
+        break;
       case 2:
         printf("speed? [deg/s]\n");
         scanf("%d",&speed);
@@ -98,7 +97,7 @@ int main(){
             }
             usleep(1000*1000);
 
-            request_set_runmode(STR, 30, 100);
+            request_set_runmode(STR, 40, 100);
             request_set_convmode(RT);
             while(1){
               request_get_runmode(&state, &speed, &dist);
@@ -119,7 +118,7 @@ int main(){
             }
             usleep(1000*1000);
 
-            request_set_runmode(STR, 30, 80);
+            request_set_runmode(STR, 40, 80);
             request_set_convmode(RT);
             while(1){
               request_get_runmode(&state, &speed, &dist);
@@ -140,7 +139,7 @@ int main(){
             }
             usleep(1000*1000);
 
-            request_set_runmode(STR, 30, 50);
+            request_set_runmode(STR, 40, 50);
             request_set_convmode(RT);
             while(1){
               request_get_runmode(&state, &speed, &dist);
@@ -149,9 +148,9 @@ int main(){
               usleep(10*1000);
             }
             usleep(1000*1000);
-
+            
             request_set_runmode(ROT, 45, 25);
-            request_set_convmode(RT);
+            request_set_convmode(ST);
             while(1){
               request_get_runmode(&state, &speed, &dist);
               request_get_convmode(&conv_state);
@@ -160,7 +159,7 @@ int main(){
             }
             usleep(1000*1000);
 
-            request_set_runmode(STR, 30, 150);
+            request_set_runmode(STR, 40, 300);
             request_set_convmode(RT);
             while(1){
               request_get_runmode(&state, &speed, &dist);
@@ -175,7 +174,7 @@ int main(){
             break;
           }
             break;
-
+            
       case 8:
         printf("speed? [cm/s]\n");
         scanf("%d",&speed);
@@ -203,18 +202,18 @@ int main(){
         while(1){
           request_get_runmode(&state, &speed, &dist);
           request_get_convmode(&conv_state);
-          if( state == STP ){
+          if( state == STP ){ 
             request_set_convmode(ST);
             break;
           }
         }
         break;
-      case 10:
+      case 10://last
         printf("speed? [cm/s]\n");
         scanf("%d",&speed);
         printf("dist? [cm]\n");
         scanf("%d",&dist);
-
+        
         request_set_runmode(STR, 30, 50);
             request_set_convmode(ST);
             while(1){
@@ -224,7 +223,7 @@ int main(){
               usleep(10*1000);
             }
             usleep(1000*1000);
-
+          
         request_set_runmode(ROT, 45,95 );
             request_set_convmode(ST);
             while(1){
@@ -234,44 +233,22 @@ int main(){
               usleep(10*1000);
             }
             usleep(1000*1000);
-
+            
         request_set_runmode(STR, 30, 50);
         request_set_convmode(RT);
         while(1){
-          request_get_runmode(&state, &speed, &dist);
+        request_set_runmode(STR, 30, 50);  request_get_runmode(&state, &speed, &dist);
           request_get_convmode(&conv_state);
-          if( state == STP ){
+          if( state == STP ){ 
             request_set_convmode(ST);
             break;
           }
         }
         break;
-
       case 11:
-        request_set_runmode(STP, 0, 0);
-        request_set_convmode(ST);
-        //scanf("%d",&mode);
-
-        dg = deg();
-        request_set_runmode(ROT, 30, dg);
-        while(1){
-          request_get_runmode(&state, &speed, &dist);
-          request_get_convmode(&conv_state);
-          if( state == STP ) break;
-          usleep(10*1000);
-        }
-        usleep(1000*1000);
         
-        request_set_runmode(STR, 40, 150);
-        request_set_convmode(RT);
-        while(1){
-          request_get_runmode(&state, &speed, &dist);
-          request_get_convmode(&conv_state);
-          if( state == STP )  break;
-          usleep(10*1000);
-        }
-        break;
-
+        
+    
   }
   arduino_close();
   return 0;

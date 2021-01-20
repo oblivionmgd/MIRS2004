@@ -8,7 +8,8 @@ admin.initializeApp({
   databaseURL: "https://mirsctrl-js.firebaseio.com"
 });
 
-var mirsRunCmd = "./Helloworld"
+var mirsRunCmd = "./test_conv"
+var mirsStopCmd = "./conv_stop"
 var db = admin.database();
 var MIRS = db.ref("MIRS");
 var order = db.ref("MIRS/machineStatus");
@@ -16,14 +17,13 @@ var order = db.ref("MIRS/machineStatus");
 
 order.on("child_changed",function(snapshot){
   if (snapshot.val() == "go"){
-    //console.log(exec.execSync(mirsRunCmd).toString());
     console.log("got command:");
     console.log(snapshot.val());
+    console.log(exec.exec(mirsRunCmd).toString());
   }
   else {
-    //console.log(exec.execSync(mirsStopCmd).toString());
-    console.log("got command:");
-    console.log(snapshot.val());
+    exec.exec("killall ./test_conv");
+    console.log(exec.execSync(mirsStopCmd).toString());
   }
 },
 function(errorObject){
