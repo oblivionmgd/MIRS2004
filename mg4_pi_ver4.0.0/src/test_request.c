@@ -251,29 +251,34 @@ int main(){
         request_set_runmode(STP, 0, 0);
         request_set_convmode(ST);
         //scanf("%d",&mode);
+        //dg = deg();
+        printf("%d",dg);
+        if(dg != 200){
+	  dg = -dg;
+          printf("%d",dg);
+	        usleep(100*1000);
+          request_set_runmode(ROT, 45, dg);
+          while(1){
+            request_get_runmode(&state, &speed, &dist);
+            request_get_convmode(&conv_state);
+            if( state == STP ) break;
+            usleep(10*1000);
+          }
+          usleep(1000*1000);
 
-        dg = deg();
-        request_set_runmode(ROT, 30, dg);
-        while(1){
-          request_get_runmode(&state, &speed, &dist);
-          request_get_convmode(&conv_state);
-          if( state == STP ) break;
-          usleep(10*1000);
-        }
-        usleep(1000*1000);
-        
-        request_set_runmode(STR, 40, 150);
-        request_set_convmode(RT);
-        while(1){
-          request_get_runmode(&state, &speed, &dist);
-          request_get_convmode(&conv_state);
-          if( state == STP )  break;
-          usleep(10*1000);
+          request_set_runmode(STR, 40, 150);
+          request_set_convmode(RT);
+          while(1){
+            request_get_runmode(&state, &speed, &dist);
+            request_get_convmode(&conv_state);
+            if( state == STP )  break;
+            usleep(10*1000);
+          }
+	        request_set_convmode(ST);
         }
         break;
-
-  }
-  arduino_close();
-  return 0;
-}
+      }
+      arduino_close();
+      return 0;
+    }
 }

@@ -17,11 +17,11 @@ var ball = db.ref("MIRS/selectedBall");
 // order.set({"status":"run"});
 ball.on("child_changed", function(snapshot){
   if (snapshot.val() == "tennisball"){
-    mirsRunCmd = "./hoge";
+    mirsRunCmd = "./test_run";
     console.log("Execution: " + mirsRunCmd.toString());
   }
   else {
-    mirsRunCmd = "./fuga";
+    mirsRunCmd = "./test_conv";
     console.log("Execution: " + mirsRunCmd.toString());
   }
 },
@@ -30,11 +30,12 @@ function(errorObject){
 });
 
 order.on("child_changed",function(snapshot){
+  console.log("Running");
   if (snapshot.val() == "go"){
     console.log(exec.exec(mirsRunCmd).toString());
   }
   else {
-    console.log("Stopped.")
+    console.log("Stopped.");
     exec.exec("killall " + mirsRunCmd.toString());
     console.log(exec.execSync(mirsStopCmd).toString());
   }

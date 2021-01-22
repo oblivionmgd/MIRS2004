@@ -19,11 +19,14 @@ int main(){
 
   request_set_runmode(STP, 0, 0);
   request_set_convmode(RT);//コンベア始動
+        request_get_convmode(&conv_state);
   usleep(500*1000);
 
+while(1){
 /*ボールを見つけるまで回転する　ここから*/
   while(1){
-    ball_deg = deg();//ボールの角度算出
+    //ball_deg = deg();//ボールの角度算出
+        deg(&ball_deg);
     if(ball_deg == 200){//見つからなかったら
       request_set_runmode(ROT, 45, 30); //30°回転
       while(1){
@@ -31,6 +34,7 @@ int main(){
         if( state == STP ) break;
       }
     }else{//見つかったら
+            ball_deg = -ball_deg*0.75;
       request_set_runmode(ROT, 45, ball_deg);//ボールのほうを向く
       while(1){
         request_get_runmode(&state, &speed, &dist);
@@ -44,16 +48,22 @@ int main(){
 
 /*ボールのほうに向かう ここから*/
   usleep(500*1000);
-  request_set_runmode(STR, 40, 100);//100cm進む
+  request_set_runmode(STR, 40, 150);//150cm進む
+  request_set_convmode(RT);
+    request_get_convmode(&conv_state);
   while(1){
-    request_get_runmode(&state, &speed, &dist);//100cm進むまでループ
+    request_get_runmode(&state, &speed, &dist);//150cm進むまでループ
+
     if( state == STP ) break;
 
     uss_l = uss_get_l();
     uss_r = uss_get_r();//超音波センサ取得
-    if((uss_l < 31 && uss_l > 0) || (uss_r < 31 && uss_r > 0)){//30センチ以下になったら
+    if((uss_l < 50) || (uss_r < 50)){//50センチ以下になったら
       request_set_runmode(STP, 0, 0);//一度止まる
-      usleep(500*1000);
+      break;
+    }
+  }
+  if()
       request_set_runmode(STR, 40, -30);//少し下がる
       while(1){
         request_get_runmode(&state, &speed, &dist);
@@ -67,7 +77,11 @@ int main(){
       }
       break;
     }
-    usleep(10*1000);
+    usleep(8000*1000);
+    request_set_convmode(ST);
+    request_get_convmode(&conv_state);
+
   }
 /*ボールのほうに向かう ここまで*/
+}
 }

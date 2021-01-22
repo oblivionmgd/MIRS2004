@@ -34,8 +34,11 @@ if len(ballrect) > 0:
 print(ball_n,height,width/2)
 a = height - (ball_n[1]+(ball_n[3]/2))
 b = (ball_n[0]+(ball_n[2]/2)) - (width/2)
-deg = math.atan(b/a)
+print(a,b)
+deg = math.atan2(b,a)
+print(deg)
 deg = deg/math.pi*90
+print(deg)
 if ball_n[0]==0:
 	deg = 200
 print(ball_n,height,width/2,deg)
@@ -49,4 +52,3 @@ cv.imwrite(fn, img)
 #cv.waitKey(0)
 # 表示したウィンドウを閉じる
 cap.release()
-cv.destroyAllWindows()
